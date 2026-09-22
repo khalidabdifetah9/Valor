@@ -97,8 +97,7 @@ export default function AboutMe() {
             </p>
           </div>
 
-          <Link
-            href={`mailto:${EMAIL}`}
+          <div
             className={`group mt-16 inline-block ${bebas.className} rounded-sm text-[clamp(2.25rem,5.2vw,5rem)] font-semibold leading-[0.95] tracking-[-0.03em] outline-offset-8 focus-visible:outline-2 md:mt-20`}
           >
             <span className="block">Don&apos;t be shy.</span>
@@ -109,7 +108,7 @@ export default function AboutMe() {
                 className="absolute inset-x-0 bottom-[0.02em] h-[0.07em] origin-left bg-[#0e0f12] transition-transform duration-500 ease-out group-hover:origin-right group-hover:scale-x-0"
               />
             </span>
-          </Link>
+          </div>
         </div>
 
         <div className="mt-16 md:col-span-5 md:mt-0">

@@ -1,14 +1,12 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { Bebas_Neue, Inter } from "next/font/google";
 
 const bebas = Bebas_Neue({ weight: "400", subsets: ["latin"], display: "swap" });
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
-const MotionLink = motion.create(Link);
 const BRAND = "valor";
 const HEADLINE = [
   "Need a website?",
@@ -19,14 +17,7 @@ const HEADLINE = [
 const MARQUEE_TEXT = "Available for new projects";
 const STATUS_TEXT =
   "Open to new projects, from quick site updates to full builds.";
-const SOCIALS = [
-  { name: "Telegram", href: "https://t.me/Kalida5" },
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/khalid-abdifetah-197630412/",
-  },
-  { name: "Twitter", href: "https://x.com/kalidabdi555" },
-];
+const CODE_PLATFORMS = ["GitHub: khalidabdifetah9"];
 
 const EASE = [0.22, 1, 0.36, 1];
 const view = { once: true, amount: 0.3 };
@@ -37,10 +28,9 @@ const Label = ({ children }) => (
   </p>
 );
 
-function FooterLink({ href, external = false, children }) {
-  const className = "group flex w-fit items-center py-1";
-  const content = (
-    <>
+function FooterItem({ children }) {
+  return (
+    <div className="group flex w-fit items-center py-1">
       <span
         aria-hidden="true"
         className="h-[2px] w-0 bg-[#c22a2a] transition-all duration-300 group-hover:mr-4 group-hover:w-8 motion-reduce:transition-none"
@@ -50,34 +40,9 @@ function FooterLink({ href, external = false, children }) {
       >
         {children}
       </span>
-    </>
-  );
-
-  return external ? (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
-      {content}
-    </a>
-  ) : (
-    <Link href={href} className={className}>
-      {content}
-    </Link>
+    </div>
   );
 }
-
-const ArrowIcon = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.6"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-    className="h-6 w-6"
-  >
-    <path d="M7 17L17 7M8 7h9v9" />
-  </svg>
-);
 
 const UpIcon = () => (
   <svg
@@ -174,12 +139,9 @@ const Footer = () => {
             ))}
           </h2>
 
-          <MotionLink
+          <motion.div
             variants={fade}
-            href={"mailto:khalidabdifeta9@gmail.com"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative flex h-44 w-full flex-col justify-between overflow-hidden bg-[#c22a2a] p-6 text-white lg:h-56 lg:w-80"
+            className="group relative flex min-h-44 w-full flex-col justify-between overflow-hidden bg-[#c22a2a] p-6 text-white lg:min-h-56 lg:w-96"
           >
             <span
               aria-hidden="true"
@@ -189,16 +151,13 @@ const Footer = () => {
               <span className="text-xs uppercase tracking-[0.2em]">
                 Start a project
               </span>
-              <span className="flex h-12 w-12 items-center justify-center bg-black text-white transition-transform duration-500 group-hover:rotate-45 motion-reduce:transition-none">
-                <ArrowIcon />
-              </span>
             </span>
             <span
-              className={`${bebas.className} relative z-10 text-5xl uppercase leading-none transition-colors duration-500 group-hover:text-black`}
+              className={`${bebas.className} relative z-10 text-2xl uppercase leading-tight transition-colors duration-500 group-hover:text-black lg:text-3xl`}
             >
-              Message me
+              "A good website is like a good joke you never have to explain it"
             </span>
-          </MotionLink>
+          </motion.div>
         </motion.div>
 
         {/* ---------- Link grid (shares the divider-line style) ---------- */}
@@ -209,15 +168,11 @@ const Footer = () => {
           viewport={view}
           className="grid grid-cols-1 gap-px border border-gray-600/40 bg-gray-600/40 md:grid-cols-3"
         >
-      
-
           <motion.div variants={fade} className="bg-black p-6 sm:p-8 lg:p-10">
-            <Label>Socials</Label>
+            <Label>Code Platform</Label>
             <div className="flex flex-col gap-1">
-              {SOCIALS.map((social) => (
-                <FooterLink key={social.name} href={social.href} external>
-                  {social.name}
-                </FooterLink>
+              {CODE_PLATFORMS.map((platform) => (
+                <FooterItem key={platform}>{platform}</FooterItem>
               ))}
             </div>
           </motion.div>
