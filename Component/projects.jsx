@@ -23,12 +23,12 @@ import ProjectsHeader from "./Projects_Header";
 const inter = Inter({ subsets: ["latin"] });
 const projects = [
   {
-    slug: "court-system",
-    title: "Court System",
+    slug: "valmora",
+    title: "Valmora",
     description:
-      "A digital court management platform designed to organize legal cases, court processes, and information through a structured and accessible interface.",
-    image: "/projects/court.avif",
-    href: "https://courtsystemkalid.vercel.app/",
+      "an impeccably crafted digital storefront and brand showcase for an ultra luxury, independent fragrance house. Built around the philosophy of quiet luxury",
+    image: "/projects/valmora.avif",
+    href: "https://parfumsvelmora.vercel.app/",
   },
   {
     slug: "arch",
@@ -60,15 +60,15 @@ const projects = [
     description:
       "A professional biomedical website designed to present products and services through a clean, structured interface built around clarity and trust.",
     image: "/projects/ever_biomedical.avif",
-    href: "https://everymedical.vercel.app/",
+    href: "https://everybiomedicalsolutionplc.com",
   },
   {
-    slug: "agrimarket",
-    title: "Agri Market",
+    slug: "home-gym",
+    title: "Home Gym",
     description:
-      "A digital marketplace connecting farmers and buyers, with product listings, authentication, agricultural tools, and AI powered crop recommendations.",
-    image: "/projects/agri_market.avif",
-    href: "https://agrimarketkalid.vercel.app/",
+      "a full featured commercial and digital platform built for a local Ethiopian fitness brand that manufactures and supplies heavy duty, multifunctional home workout equipment.",
+    image: "/projects/Home_gym.avif",
+    href: "https://wendawend-homegym.com/",
   },
 ];
 
